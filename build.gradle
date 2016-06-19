@@ -1,5 +1,31 @@
 apply plugin: 'java'
 apply plugin: 'war'
+apply plugin: 'docker'
+
+// Docker
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'se.transmode.gradle:gradle-docker:1.2'
+    }
+}
+
+group = 'hilti'
+
+docker {
+    baseImage = 'jboss/wildfly'
+}
+
+task docker(type: Docker) {
+    dependsOn 'build'
+    applicationName = 'bff'
+    addFile 'build/libs/chuan.war', '/opt/jboss/wildfly/standalone/deployments/'
+}
+
+// Application
 
 repositories {
     jcenter()

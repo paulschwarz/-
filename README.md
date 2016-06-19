@@ -7,6 +7,16 @@
 
 The sample servlets is available on `<host>:8080/bff/`.
  
+## Make gradle fast!
+ 
+On your development machine turn on the gradle daemon by simply run this command 
+`touch ~/.gradle/gradle.properties && echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties`
+
+*Don't do this on the continuous integration server.*
+ 
+After this, gradle will cache configuration making it faster to run subsequent tasks.
+For more, see https://docs.gradle.org/2.12/userguide/gradle_daemon.html
+ 
 ## Using docker-machine?
 
 Run `$ docker-machine env <docker-machine-name>`

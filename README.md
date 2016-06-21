@@ -7,6 +7,9 @@
 
 The sample servlets is available on `<host>:8080/bff/`.
  
+## About the Wildfly Docker base image
+https://hub.docker.com/r/jboss/wildfly/
+ 
 ## Make gradle fast!
  
 On your development machine turn on the gradle daemon by simply run this command 
